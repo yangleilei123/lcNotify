@@ -19,7 +19,7 @@
   width: 90%;
   background-color: white;
   border-radius: 24rpx;
-  padding: 50rpx;
+  padding: 30rpx;
   box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
   margin-top: 40rpx;
   transition: transform 0.3s ease;
