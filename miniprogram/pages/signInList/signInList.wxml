@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="header">今日签到列表</view>
+  <view class="list">
+    <view class="item" wx:for="{{signInList}}" wx:key="*this">
+      <text>{{item.openid}}</text>
+      <text>已签到</text>
+    </view>
+  </view>
+</view>

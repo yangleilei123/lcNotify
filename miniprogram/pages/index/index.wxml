@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="header">今日出题人</view>
+
+    <view class="info-card">
+        <view class="date-section">
+            <text class="label">当前日期：</text>
+            <text class="value">{{currentDate}}</text>
+        </view>
+
+        <view class="setter-section">
+            <text class="label">今日出题人：</text>
+            <text class="value highlight">{{paperSetter ? paperSetter : '当前无出题人'}}</text>
+        </view>
+    </view>
+
+    <button class="sign-in-button" bindtap="signIn" disabled="{{isSigned || isSigning}}">
+        {{isSigned ? '已签到' : '签到'}}
+    </button>
+
+    <view class="sign-in-list" wx:if="{{signInList.length > 0}}">
+        <view class="list-header">签到列表</view>
+        <view class="list-item" wx:for="{{signInList}}" wx:key="nickname">
+            <image src="{{item.avatarUrl}}" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;"></image>
+            <text>{{item.nickname}}</text>
+            <text>{{item.status}}</text>
+        </view>
+    </view>
+
+    <view class="tips">
+        <text>出题人按 添加用户时间先后 顺序轮流，每天更换</text>
+    </view>
+    <!-- pages/index/index.wxml -->
+    <view class="user-info-container" wx:if="{{!isAuthorized}}">
+        <view class="user-info-card">
+            <view class="card-header">
+                <text class="header-title">完善个人信息</text>
+            </view>
+            <view class="card-content">
+                <button open-type="chooseAvatar" bindchooseavatar="onChooseAvatar" class="avatar-wrapper">
+                    <image class="avatar-img" src="{{avatarUrl || defaultAvatarUrl}}"></image>
+                    <view class="avatar-mask">
+                        <text class="avatar-tip">点击更换</text>
+                    </view>
+                </button>
+                <view class="input-wrapper">
+                    <input placeholder="请输入您的昵称" bindinput="onNicknameInput" class="nickname-input" maxlength="20" />
+                </view>
+                <button bindtap="onSubmitInfo" class="submit-btn" hover-class="submit-btn-hover">确认提交</button>
+            </view>
+        </view>
+    </view>
+</view>

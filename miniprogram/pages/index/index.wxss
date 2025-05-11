@@ -1,0 +1,261 @@
+.container {
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
+}
+
+.header {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 40rpx 0;
+  text-shadow: 2rpx 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.info-card {
+  width: 90%;
+  background-color: white;
+  border-radius: 24rpx;
+  padding: 50rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+  margin-top: 40rpx;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: scale(1.02);
+}
+
+.date-section, .setter-section {
+  display: flex;
+  align-items: center;
+  margin: 30rpx 0;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.label {
+  font-size: 32rpx;
+  color: #7f8c8d;
+  width: 240rpx;
+}
+
+.value {
+  font-size: 36rpx;
+  color: #2c3e50;
+}
+
+.highlight {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.tips {
+  margin-top: 50rpx;
+  font-size: 28rpx;
+  color: #95a5a6;
+  text-align: center;
+}
+
+.sign-in-button {
+  margin-top: 40rpx;
+  width: 90%;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 36rpx;
+  padding: 25rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 6rpx 18rpx rgba(231, 76, 60, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sign-in-button[disabled] {
+  background-color: #bdc3c7;
+  box-shadow: none;
+}
+
+.sign-in-button:hover:not([disabled]) {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.sign-in-list {
+  width: 90%;
+  background-color: white;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+  margin-top: 40rpx;
+}
+
+.list-header {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20rpx;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item:hover {
+  background-color: #ecf0f1;
+}
+
+.nickname-text {
+  font-size: 32rpx;
+  color: #2c3e50;
+}
+
+.status-text {
+  font-size: 32rpx;
+  color: #7f8c8d;
+}
+
+.user-info-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.user-info-card {
+  width: 80%;
+  background: #ffffff;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 30rpx;
+  text-align: center;
+  background: #6e8efb;
+}
+
+.header-title {
+  font-size: 32rpx;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.card-content {
+  padding: 30rpx;
+}
+
+.avatar-wrapper {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto 30rpx;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background: none;
+  border: 4rpx solid #6e8efb;
+  box-shadow: 0 0 20rpx rgba(110, 142, 251, 0.3);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.avatar-wrapper:active {
+  transform: scale(0.95);
+}
+
+.avatar-wrapper::after {
+  border: none;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4rpx solid #ffffff;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.avatar-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(110, 142, 251, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.avatar-wrapper:active .avatar-mask {
+  opacity: 1;
+}
+
+.avatar-tip {
+  color: #ffffff;
+  font-size: 24rpx;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8rpx 16rpx;
+  border-radius: 30rpx;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.avatar-wrapper:active .avatar-tip {
+  transform: scale(1);
+}
+
+.input-wrapper {
+  margin-bottom: 30rpx;
+}
+
+.nickname-input {
+  width: 100%;
+  height: 80rpx;
+  background: #f8f8f8;
+  border-radius: 40rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 80rpx;
+  background: #6e8efb;
+  border-radius: 40rpx;
+  color: #ffffff;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.submit-btn-hover {
+  opacity: 0.9;
+}
